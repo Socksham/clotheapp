@@ -82,6 +82,7 @@ class UserAdmin(BaseUserAdmin):
 admin.site.register(User, UserAdmin)
 admin.site.register(Post)
 admin.site.register(Like)
+admin.site.register(Dislike)
 admin.site.register(Comment)
 admin.site.register(Profile)
 admin.site.register(Relationship)

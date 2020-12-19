@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 from main.utils import getAPICall
 from main.models import Post, Profile
+=======
+from .utils import getAPICall
+from .models import Post, Profile
+>>>>>>> e3f3a2fa180e0d3e385092c3dec3e68531fa0e64
 from django.shortcuts import render, HttpResponse, redirect
 from .forms import signupForm
 from django.contrib.auth import authenticate, login
@@ -39,7 +44,7 @@ def profile_view(request):
 
 def preferences(request):
     return render(request, "preferences.html")
-    
+
 def userChoices(request):
     location = request.POST['location']
     gender = request.POST['gender']
@@ -65,11 +70,17 @@ def post_comment_create_and_list_view(request):
         'profile':profile,
     }
 
-    return render(request, 'post.html', context)
+    print(qs)
+    for post in qs:
+        print(post.num_likes)
+    print(profile)
+
+    return render(request, 'posts.html', context)
 
 def like_unlike_post(request):
     user = request.user
     if request.method == 'POST':
+        print("HERE")
         post_id = request.POST.get('post_id')
         post_obj = Post.objects.get(id=post_id)
         profile = Profile.objects.get(user=user)
