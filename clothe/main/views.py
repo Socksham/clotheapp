@@ -1,9 +1,12 @@
-from clothe.main.utils import getAPICall
-from clothe.main.models import Post, Profile
+from main.utils import getAPICall
+from main.models import Post, Profile
 from django.shortcuts import render, HttpResponse, redirect
 from .forms import signupForm
 from django.contrib.auth import authenticate, login
 from .utils import *
+from requests import get
+from bs4 import BeautifulSoup
+
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
@@ -41,11 +44,16 @@ def userChoices(request):
     location = request.POST['location']
     gender = request.POST['gender']
     color_ = request.POST['color']
+    URL = f'https://www.htmlcsscolor.com/hex/{color_[1:]}'
+    response = get(URL)
+    simple_soup = BeautifulSoup(response, 'html.parser')      # use html.parser in order to understand the simple HTML
+    mydivs = simple_soup.find("h2", {"id": "cntMain_lblTints"})
+    answer = mydivs.find('strong').getText()
     clothing_type = request.POST['clothing_type']
     style = request.POST['style']
     upper = int(request.POST['upper'])
     lower = int(request.POST['lower'])
-    search_results = getAPICall(location, gender, color_, clothing_type, style, upper, lower)
+    search_results = getAPICall(location, gender, answer, clothing_type, style, upper, lower)
     print(search_results)
     return render(request, 'search_results.html', {'search_results':search_results})
 
