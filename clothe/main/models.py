@@ -113,14 +113,18 @@ class Profile(models.Model):
     def get_likes_given_no(self):
         likes = self.like_set.all()
         total_liked = 0
+        total_disliked = 0
         for item in likes:
             if item.value=='Like':
                 total_liked += 1
+            elif item.value=='Dislike':
+                total_disliked += 1
         return total_liked
 
     def get_likes_recieved_no(self):
         posts = self.posts.all()
         total_liked = 0
+        total_disliked = 0
         for item in posts:
             total_liked += item.liked.all().count()
         return total_liked
@@ -178,7 +182,7 @@ class Comment(models.Model):
 LIKE_CHOICES = (
     ('Like', 'Like'),
     ('Unlike', 'Unlike'),
-    
+    ('Dislike', 'Dislike'),
 )
 
 class Like(models.Model):
