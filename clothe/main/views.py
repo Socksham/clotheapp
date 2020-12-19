@@ -9,7 +9,7 @@ def home(request):
 def signup_view(request):
     print("signup")
     if request.method == 'POST':
-        form = signupForm(request.POST) 
+        form = signupForm(request.POST)
         print(form.is_valid())
         if form.is_valid():
             form.save()

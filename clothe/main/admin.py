@@ -84,6 +84,7 @@ admin.site.register(Post)
 admin.site.register(Like)
 admin.site.register(Comment)
 admin.site.register(Profile)
+admin.site.register(Relationship)
 # ... and, since we're not using Django's built-in permissions,
 # unregister the Group model from admin.
 admin.site.unregister(Group)
