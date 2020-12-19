@@ -25,5 +25,9 @@
             <p class = "dislikenumber">#######</p>
         </div>
     </div>
+    {% for obj in qs %}
+    {{obj.num_dislikes}}
+    {{profile}}
+    {% endfor %}
 </body>
 </html>
