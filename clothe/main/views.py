@@ -1,3 +1,5 @@
+from clothe.main.utils import getAPICall
+from clothe.main.models import Profile
 from django.shortcuts import render, HttpResponse, redirect
 from .forms import signupForm
 from django.contrib.auth import authenticate, login
@@ -23,3 +25,12 @@ def signup_view(request):
         form = signupForm()
 
     return render(request, 'signup.html', {'form': form})
+
+def profile_view(request):
+    profile = Profile.objects.get(user=request.user)
+    context = {
+        'profile':profile,
+    }
+
+    return render(request, 'profile.html', context)
+
