@@ -159,6 +159,9 @@ class Post(models.Model):
     def num_likes(self):
         return self.liked.all().count()
 
+    def num_comments(self):
+        return self.comment_set.all().count()
+
     class Meta:
         ordering = ('-created',)
 
@@ -175,6 +178,7 @@ class Comment(models.Model):
 LIKE_CHOICES = (
     ('Like', 'Like'),
     ('Unlike', 'Unlike'),
+    
 )
 
 class Like(models.Model):
