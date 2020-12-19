@@ -1,0 +1,98 @@
+.divcenter {
+    margin: auto;
+    width: 30%;
+    border: 3px solid black;
+    padding: 10px;
+    background-color: white;
+  }
+  
+  #clothelogo {
+    color: black;
+    text-align: center;
+    font-style: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 48px;
+  }
+  
+  .imageposts {
+    display: table-cell;
+    vertical-align: middle;
+    align-self: center;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    border: 5px solid white;
+    border-radius: 5px;
+  }
+  
+  .divuserdisplay {
+    display:inline-block; margin-left: 0px;
+  }
+  
+  .profpic {
+    display: inline-block; margin-left: 0px;
+    display: inline-block; margin-top: 0px;
+    width: 35px;
+    height: width;
+    border-radius: 50%;
+    border: 2px solid black;
+  }
+  
+  .usernames {
+    display: inline-block; margin-left: 7px;
+    display: inline-block; margin-top: 0px;
+    display: inline-block; vertical-align: middle;
+    font-size: 25px;
+    color: black;
+  }
+  
+  .captions {
+    text-align: center;
+    font-size: 18px;
+    color: black;
+  }
+  
+  .divlike {
+    display: inline-block; margin-left: 10px;
+  }
+  
+  .divdislike {
+    display: inline-block; margin-left: 15px;
+  }
+  
+  .like {
+    width: 25px;
+    height: auto;
+    display: inline-block; vertical-align: middle;
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .likenumber {
+    display: inline-block; margin-left: 4px;
+    display: inline-block; vertical-align: middle;
+    font-size: 18px;
+    font-family:'Franklin Gothic Medium', 'Arial Bold', Arial, sans-serif;
+  }
+  
+  .dislike {
+    width: 25px;
+    height: auto;
+    display: inline-block; vertical-align: middle;
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .dislikenumber {
+    display: inline-block; margin-left: 4px;
+    display: inline-block; vertical-align: middle;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Bold', Arial, sans-serif;
+  }
