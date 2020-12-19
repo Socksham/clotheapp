@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferences</title>
+</head>
+<body>
+    <h1> Hello User!!!</h1>
+    <form action="recommendation" method = 'post'>
+    {%csrf_token%}
+    Where are you searching from? <input type="text" name = "location"><br>
+    Gender: <input type="text" name = "gender"><br>
+    Color: <input type="text" name = "color"><br>
+    Clothing type: <input type="text" name = "clothing_type"><br>
+    Style: <input type="text" name = "style"><br>
+    Price Upper: <input type="text" name = "upper"><br>
+    Price Lower: <input type="text" name = "lower"><br>
+    <input type="submit">
+</form>
+
+</body>
+</html>
