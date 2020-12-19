@@ -23,24 +23,4 @@ def getAPICall(location, gender, color, clothingtype, style, priceUpper, priceLo
     # print the JSON response from Scale SERP
     # print(json.dumps(api_result.json()))
     res = api_result.json()
-
-    results = []
-
-    for item in res["shopping_results"]:
-        if item['price'] > priceLower and item['price']>priceUpper:
-            answerDict = {
-                "title": item['price'],
-                "id": item['id'],
-                "link": item['link'],
-                "rating": item['rating'],
-                "reviews": item['reviews'],
-                "price": item['price'],
-                "price_raw": item['price_raw'],
-                "merchant": item['merchant'],
-                "snippet": item['snippet'],
-                "delivery": item['delivery'],
-                'image': item['image'],
-                "position": item['position']
-            }
-            results.append(answerDict)
-    return results
+    return res
