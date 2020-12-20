@@ -2,6 +2,14 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+<<<<<<< HEAD
+<form action="" method="POST" enctype="multipart/form-data" class="post-form">
+    {% csrf_token %}
+    {{p_form | crispy}}
+    <button type='submit'>Send Post</button>
+</form>
+{% endblock content %}
+=======
 <br><br><br><br>
 <div class = "divcenter">
     <!-- <form action="" method="POST" enctype="multipart/form-data" class="post-form">
@@ -18,3 +26,4 @@
     </form>
 </div>
 {% endblock content%}
+>>>>>>> 08265083e33ef953ac02389658a41ae4264030cc
