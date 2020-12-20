@@ -1,11 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Results</title>
-</head>
-<body>
-    Results...{{search_results.shopping_results}}
-</body>
-</html>
+{%extends 'base.html'%}
+{%block content%}
+<!-- Results...{{search_results.shopping_results}} -->
+{%for result in search_results.shopping_results%}
+<div class = "divcenter">
+    <div class = "divuserdisplay">
+        <p class = "title" >{{result.title}}</p>
+        <p class = "merchant" href = {{result.link}}>{{result.merchant}}</p>
+    </div>
+    <img class = "imageposts" src = {{result.image}}>
+    <p class = "captions">{{result.snippet}}</p>
+    <div class = "divrating">
+        <button class="rating"><i class="fa fa-star"></i></button>
+        <p class = "rating score">{{result.rating}} out of 5</p>
+    </div>
+    <div class = "divreviews">
+        <button class="reviews"><i class="fa fa-hashtag"></i></button>
+        <p class = "review numbers">{{result.reviews}} reviews</p>
+    </div>
+</div>
+{%endfor%}
+{%endblock content%}

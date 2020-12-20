@@ -1,34 +1,46 @@
 {%extends "base.html"%}
 {%block content%}
+    <br>
+    <br>
+    <br>
+    <br>
     <div class = "divcenter">
-        <h1> Hello User!!!</h1>
+        <h1 id = "pref-title">Preferences</h1>
         <form action="recommendation" method = 'post'>
             {%csrf_token%}
             <div class = "divpreference">
                 Where are you searching from? <input type = "text" name = "location"><br>
             </div>
             <div class = "divpreference">
-                Gender: 
-                <select id="man" name="gender" size="4" multiple>
+                Gender & Age Group:
+                <br> 
+                <select id="gender" name="gender" size="4" multiple>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
-                    <option value="female">Rather not say</option>
+                    <option value="boy">Boy</option>
+                    <option value="girl">Girl</option>
+                    <option value="rather not say">Rather not say</option>
                 </select>
             </div>
             <div class = "divpreference">
-                Color: 
-                <input id="colorPicker" type="color" value="#ff0000">
-                <select id="man" name="color" size="4" multiple>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="female">Rather not say</option>
+                Color:  <input type = "text" name = "color"><br>
+            </div>
+            <div class = "divpreference">
+                Clothing type:
+                <br>
+                <select id="cloth" name="clothing_type" size="4" multiple>
+                    <option value="top">Top</option>
+                    <option value="bottom">Bottom</option>
+                    <option value="shoes">Shoes</option>
                 </select>
             </div>
             <div class = "divpreference">
-                Clothing type: <input type = "text" name = "clothing_type"><br>
-            </div>
-            <div class = "divpreference">
-                Style: <input type = "text" name = "style"><br>
+                Style:
+                <br>
+                <select id="style" name="style" size="4" multiple>
+                    <option value="casual">Casual</option>
+                    <option value="formal">Formal</option>
+                </select>
             </div>
             <div class = "divpreference">
                 Price Upper: <input type = "text" name = "upper"><br>

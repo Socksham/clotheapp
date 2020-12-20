@@ -1,9 +1,11 @@
 .divcenter {
     margin: auto;
-    width: 30%;
+    width: 50%;
     border: 3px solid black;
     padding: 10px;
     background-color: white;
+    padding-top: 50px;
+    border-radius: 10px;
   }
   
   #clothelogo {
@@ -15,17 +17,18 @@
   }
   
   .imageposts {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: table-cell;
     vertical-align: middle;
     align-self: center;
-    width: 350px;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     height: auto;
     border: 5px solid white;
     border-radius: 5px;
   }
-  
+ 
   .divuserdisplay {
     display:inline-block; margin-left: 0px;
   }
@@ -40,6 +43,7 @@
   }
   
   .usernames {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: inline-block; margin-left: 7px;
     display: inline-block; margin-top: 0px;
     display: inline-block; vertical-align: middle;
@@ -48,6 +52,7 @@
   }
   
   .captions {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     font-size: 18px;
     color: black;
@@ -113,6 +118,7 @@ li {
 }
 
 li a {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: block;
   color: white;
   text-align: center;
@@ -129,8 +135,29 @@ li a:hover {
   /* display: inline-block; vertical-align: middle;
   align-self: center;
   display: inline-block; margin-left: 20px; */
-  background-color:#33cc33; width: 50%;
   text-align: center;
   padding: 2px;
   margin: 10px auto;
+}
+.static{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#gender{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 50%;
+  height: 100px;
+}
+#cloth{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 50%;
+  height: 60px;
+}
+#style{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 50%;
+  height: 40px;
+}
+#pref-title{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
 }
