@@ -71,10 +71,13 @@ def post_comment_create_and_list_view(request):
 
 def like_unlike_post(request):
     user = request.user
+    print("HERE NOW")
     if request.method == 'POST':
+        data = json.loads(request.body)
+        post_id = data['id']
         print("HERE")
-        post_id = request.POST.get('post_id')
-        post_obj = Post.objects.get(id=post_id)
+        print(post_id)
+        post_obj = Post.objects.all()[post_id-1]
         profile = Profile.objects.get(user=user)
 
         if profile in post_obj.liked.all():
@@ -95,4 +98,36 @@ def like_unlike_post(request):
             
             post_obj.save()
             like.save()
+    return redirect('posts')
+
+def dislike_undislike_post(request):
+    user = request.user
+    if request.method == 'POST':
+        print("HERE")
+        data = json.loads(request.body)
+        post_id = data['id']
+        print("HERE")
+        print(post_id)
+        post_obj = Post.objects.all()[post_id-1]
+        post_obj = Post.objects.get(id=post_id)
+        profile = Profile.objects.get(user=user)
+
+        if profile in post_obj.liked.all():
+            post_obj.disliked.remove(profile)
+        else:
+            post_obj.disliked.add(profile)
+        
+        dislike, created = Dislike.objects.get_or_create(user=profile, post_id=post_id)
+
+        if not created:
+            if dislike.value == 'Dislike':
+                dislike.value='Undislike'
+            else:
+                dislike.value='Dislike'
+
+        else:
+            dislike.value='Dislike'
+            
+            post_obj.save()
+            dislike.save()
     return redirect('posts')
