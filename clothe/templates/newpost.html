@@ -11,9 +11,10 @@
             <button type='submit'>Send Post</button>
         </div>
     </form> -->
-    <form method = "get" action = "#">
+    <form method = "POST" action = "">
+        {% csrf_token %}
         {{p_form | crispy}}
-        <input type = "submit" value = "Create Post">
+        <button type = "submit">Create Post</button>
     </form>
 </div>
 {% endblock content%}
