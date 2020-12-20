@@ -2,20 +2,21 @@
 {%block content%}
 <!-- Results...{{search_results.shopping_results}} -->
 {%for result in search_results.shopping_results%}
-<div class = "divcenter">
-    <div class = "divuserdisplay">
-        <p class = "title" >{{result.title}}</p>
-        <p class = "merchant" href = {{result.link}}>{{result.merchant}}</p>
+<br><br>
+<div class = "divresultcenter">
+    <div class = "divitemdisplay">
+        <p class = "itemmerchant" href = {{result.link}}>{{result.merchant}}</p>
+        <p class = "itemtitle">{{result.title}}</p>
     </div>
-    <img class = "imageposts" src = {{result.image}}>
-    <p class = "captions">{{result.snippet}}</p>
-    <div class = "divrating">
-        <button class="rating"><i class="fa fa-star"></i></button>
-        <p class = "rating score">{{result.rating}} out of 5</p>
+    <img class = "resultimageposts" src = {{result.image}}>
+    <p class = "resultcaptions">{{result.snippet}}</p>
+    <div class = "divitemrating">
+        <button class="itemrating"><i class="fa fa-star"></i></button>
+        <p class = "itemratingscore">{{result.rating}} out of 5</p>
     </div>
-    <div class = "divreviews">
-        <button class="reviews"><i class="fa fa-hashtag"></i></button>
-        <p class = "review numbers">{{result.reviews}} reviews</p>
+    <div class = "divitemreviews">
+        <button class="itemreviews"><i class="fa fa-hashtag"></i></button>
+        <p class = "itemreviewnumbers">{{result.reviews}} reviews</p>
     </div>
 </div>
 {%endfor%}
