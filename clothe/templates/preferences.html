@@ -1,15 +1,20 @@
 {%extends "base.html"%}
 {%block content%}
+    <br>
+    <br>
+    <br>
+    <br>
     <div class = "divcenter">
-        <h1> Hello User!!!</h1>
+        <h1 id = "pref-title">Preferences</h1>
         <form action="recommendation" method = 'post'>
             {%csrf_token%}
             <div class = "divpreference">
                 Where are you searching from? <input type = "text" name = "location"><br>
             </div>
             <div class = "divpreference">
-                Gender: 
-                <select id="man" name="gender" size="4" multiple>
+                Gender & Age Group:
+                <br> 
+                <select id="gender" name="gender" size="4" multiple>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="boy">Boy</option>
@@ -22,7 +27,8 @@
             </div>
             <div class = "divpreference">
                 Clothing type:
-                <select id="man" name="clothing_type" size="4" multiple>
+                <br>
+                <select id="cloth" name="clothing_type" size="4" multiple>
                     <option value="top">Top</option>
                     <option value="bottom">Bottom</option>
                     <option value="shoes">Shoes</option>
@@ -30,7 +36,8 @@
             </div>
             <div class = "divpreference">
                 Style:
-                <select id="man" name="style" size="4" multiple>
+                <br>
+                <select id="style" name="style" size="4" multiple>
                     <option value="casual">Casual</option>
                     <option value="formal">Formal</option>
                 </select>
