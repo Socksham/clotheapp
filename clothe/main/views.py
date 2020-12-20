@@ -99,7 +99,8 @@ def like_unlike_post(request):
             post_obj.save()
             like.save()
     return redirect('posts')
-
+def login(request):
+    return render(request, "login.html")
 def dislike_undislike_post(request):
     user = request.user
     if request.method == 'POST':

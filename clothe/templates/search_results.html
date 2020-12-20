@@ -2,13 +2,16 @@
 {%block content%}
 <!-- Results...{{search_results.shopping_results}} -->
 {%for result in search_results.shopping_results%}
+{%if result.price > 10%}
 <div class = "divcenter">
     <div class = "divuserdisplay">
         <p class = "title" >{{result.title}}</p>
         <p class = "merchant" href = {{result.link}}>{{result.merchant}}</p>
     </div>
     <img class = "imageposts" src = {{result.image}}>
+    <p class = "price">{{result.price_raw}}</p>
     <p class = "captions">{{result.snippet}}</p>
+    {%if rating%}
     <div class = "divrating">
         <button class="rating"><i class="fa fa-star"></i></button>
         <p class = "rating score">{{result.rating}} out of 5</p>
@@ -17,6 +20,8 @@
         <button class="reviews"><i class="fa fa-hashtag"></i></button>
         <p class = "review numbers">{{result.reviews}} reviews</p>
     </div>
+    {%endif%}
 </div>
+{%endif%}
 {%endfor%}
 {%endblock content%}
