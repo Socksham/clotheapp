@@ -5,7 +5,7 @@
     {% for obj in qs %}
     <div class = "divcenter">
         <div class = "divuserdisplay">
-            <img class="profpic" src={{obj.author.avatar.url}}> 
+            <img class="smallprofpic" src={{obj.author.avatar.url}}> 
                 {{ obj.author.user.username }} - {{ obj.created|timesince}} ago
         </div>
         {% if obj.image %}

@@ -33,7 +33,7 @@
     display:inline-block; margin-left: 0px;
   }
   
-  .profpic {
+  .smallprofpic {
     display: inline-block; margin-left: 0px;
     display: inline-block; margin-top: 0px;
     width: 35px;
@@ -132,32 +132,125 @@ li a:hover {
 }
 
 .divpreference {
-  /* display: inline-block; vertical-align: middle;
-  align-self: center;
-  display: inline-block; margin-left: 20px; */
   text-align: center;
   padding: 2px;
   margin: 10px auto;
 }
+
 .static{
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 #gender{
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   width: 50%;
   height: 100px;
 }
+
 #cloth{
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   width: 50%;
   height: 60px;
 }
+
 #style{
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   width: 50%;
   height: 40px;
 }
+
 #pref-title{
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
 }
+
+
+
+
+/* css for search results */
+
+
+.divresultcenter {
+  margin: auto;
+  width: 37%;
+  border: 3px solid black;
+  padding: 10px;
+  background-color: white;
+  /* padding-top: 50px; */
+  border-radius: 10px;
+}
+
+.resultimageposts {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: table-cell;
+  vertical-align: middle;
+  align-self: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  border-radius: 5px;
+}
+
+.resultcaptions {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  font-size: 27px;
+  color: black;
+}
+
+.divitemdisplay {
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.itemmerchant {
+  text-align: center;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 45px
+}
+
+.itemtitle {
+  text-align: center;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+}
+
+
+.divitemrating {
+  display: inline-block; margin-left: 10px;
+}
+
+.itemrating {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 25px;
+  display: inline-block; vertical-align: middle;
+} 
+
+.itemratingscore {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 25px;
+  display: inline-block; margin-left: 4px;
+  display: inline-block; vertical-align: middle;
+}
+
+
+.divitemreviews {
+  display: inline-block; margin-left: 15px;
+}
+
+.itemreviews {
+  display: inline-block; vertical-align: middle;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 25px;
+}
+
+.itemreviewnumbers {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 25px;
+  display: inline-block; margin-left: 4px;
+  display: inline-block; vertical-align: middle;
+}
+
+

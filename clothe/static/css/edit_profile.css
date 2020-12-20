@@ -6,7 +6,7 @@
     font-size: 48px;
   }
 
-  .profpic {
+  .bigprofpic {
     text-align: center;
     width: 400px;
     height: width;
@@ -48,7 +48,7 @@
 #usernamefield {
     display: inline-block; margin-left: 60px;
     display: inline-block; vertical-align: middle;
-    width: 500px;
+    width: 700px;
     height: 30px;
     border-radius: 10px;
 }
@@ -56,7 +56,7 @@
 #emailfield {
     display: inline-block; margin-left: 107px;
     display: inline-block; vertical-align: middle;
-    width: 500px;
+    width: 700px;
     height: 30px;
     border-radius: 10px;
 }
@@ -64,7 +64,7 @@
 #genderfield {
     display: inline-block; margin-left: 89px;
     display: inline-block; vertical-align: middle;
-    width: 500px;
+    width: 700px;
     height: 30px;
     border-radius: 10px;
 }
