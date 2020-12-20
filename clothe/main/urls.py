@@ -18,4 +18,6 @@ urlpatterns = [
     path('disliked/', main_views.dislike_undislike_post, name = "dislike_posts"),
     path('editprofile/', main_views.editProfile, name = "editProfile"),
     path('createpost/', main_views.create_posts, name="create_posts"),
+    path('generate/', main_views.generate_fit, name="generate_fit"),
+    path('generatedresults/', main_views.generated_results, name="generated_results"),
 ]

@@ -1,7 +1,7 @@
 {%extends 'base.html'%}
 {%block content%}
 <!-- Results...{{search_results.result}} -->
-{%for result in search_results%}
+{%for result in search_results.shopping_results%}
 <div class = "divcenter">
     <div class = "divuserdisplay">
         <p class = "title" >{{result.title}}</p>

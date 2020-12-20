@@ -7,6 +7,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from .forms import *
 from django.contrib.auth import authenticate, login
 from .utils import *
+from random import randint
 
 # Create your views here.
 def home(request):
@@ -50,7 +51,7 @@ def userChoices(request):
     lower = int(request.POST['lower'])
     search_results = getAPICall(location, gender, color_, clothing_type, style, upper, lower)
     print(search_results)
-    return render(request, 'search_results.html', {'search_results':search_results})
+    return render(request, 'search_results copy.html', {'search_results':search_results})
     
 def create_posts(request):
     profile = Profile.objects.get(user=request.user)
@@ -166,4 +167,29 @@ def dislike_undislike_post(request):
             post_obj.save()
             dislike.save()
     return redirect('posts')
+
+def generate_fit(request):
+    return render(request, "generate.html")
+
+def generated_results(request):
+    profile = Profile.objects.get(user=request.user)
+    colors = ["red", "orange", "yellow", "blue", "green", "pink"]
+    cloth_types = ["shirt", "pant", "shoe"]
+    styles = ["casual", "formal", "athletic"]
+    upper = 1000
+    lower = 10
+    location = ""
+    style = styles[randint(0, len(styles)-1)]
+    search_results = []
+    gender = profile.user.gender
+    for x in range(3):
+        color_ = colors[randint(0, len(colors)-1)]
+        clothing_type = cloth_types[x]
+        results = getAPICall(location, gender, color_, clothing_type, style, upper, lower)
+        print(results["shopping_results"][randint(0, len(results["shopping_results"])-1)])
+        search_results.append(results["shopping_results"][randint(0, len(results["shopping_results"])-1)])
+    print("------------------------------------------------")
+    print(search_results)
+    return render(request, 'search_results.html', {'search_results':search_results, 'style':style})
+
 
