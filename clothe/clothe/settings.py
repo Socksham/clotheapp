@@ -136,3 +136,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
+
+
+
+
+# do not keep anything lower than this
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
