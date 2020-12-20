@@ -84,6 +84,9 @@ def like_unlike_post(request):
             post_obj.liked.remove(profile)
         else:
             post_obj.liked.add(profile)
+            if profile in post_obj.disliked.all():
+                post_obj.disliked.remove(profile)
+                print("HERESOUJHFOIUSHEF")
         
         like, created = Like.objects.get_or_create(user=profile, post_id=post_id)
 
@@ -116,6 +119,8 @@ def dislike_undislike_post(request):
             print("HERESOUJHFOIUSHEF")
         else:
             post_obj.disliked.add(profile)
+            if profile in post_obj.liked.all():
+                post_obj.liked.remove(profile)
         
         dislike, created = Dislike.objects.get_or_create(user=profile, post_id=post_id)
 
