@@ -30,15 +30,12 @@ def signup_view(request):
 
     return render(request, 'signup.html', {'form': form})
 
-def profile_view(request):
+def editProfile(request):
     profile = Profile.objects.get(user=request.user)
     context = {
         'profile':profile,
     }
-    return render(request, 'profile.html', context)
-
-def editProfile(request):
-    return render(request, 'edit_profile.html')
+    return render(request, 'edit_profile.html', context)
 
 def preferences(request):
     return render(request, "preferences.html")
