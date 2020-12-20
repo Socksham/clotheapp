@@ -4,7 +4,7 @@ from .utils import getAPICall
 from .models import Post, Profile
 from .models import *
 from django.shortcuts import render, HttpResponse, redirect
-from .forms import signupForm
+from .forms import *
 from django.contrib.auth import authenticate, login
 from .utils import *
 
@@ -54,13 +54,45 @@ def userChoices(request):
     search_results = getAPICall(location, gender, color_, clothing_type, style, upper, lower)
     print(search_results)
     return render(request, 'search_results.html', {'search_results':search_results})
+    
+def create_posts(request):
+    profile = Profile.objects.get(user=request.user)
+
+    # Post form, comment form
+    p_form = PostModelForm(request.POST or None, request.FILES or None)
+
+    if p_form.is_valid():
+        instance = p_form.save(commit=False)
+        instance.author = profile
+        instance.save()
+        return redirect('posts')
+    
+    context = {
+        'profile':profile,
+        'p_form':p_form,
+    }
+
+    return render(request, 'newpost.html', context)
+
 
 def post_comment_create_and_list_view(request):
     qs = Post.objects.all()
     profile = Profile.objects.get(user=request.user)
+
+
+    # Post form, comment form
+    p_form = PostModelForm(request.POST or None, request.FILES or None)
+
+    if p_form.is_valid():
+        instance = p_form.save(commit=False)
+        instance.author = profile
+        instance.save()
+        p_form = PostModelForm()
+
     context = {
         'qs':qs,
         'profile':profile,
+        'p_form':p_form,
     }
 
     print(qs)

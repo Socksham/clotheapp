@@ -1,0 +1,8 @@
+{% extends 'base.html'%}
+{% block content %}
+<form action="" method="POST" enctype="multipart/form-data" class="post-form">
+    {% csrf_token %}
+    {{p_form}}
+    <button type='submit'>Send Post</button>
+</form>
+{% endblock content%}

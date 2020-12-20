@@ -11,5 +11,6 @@ urlpatterns = [
     path('posts/', main_views.post_comment_create_and_list_view, name="posts"),
     path('liked/', main_views.like_unlike_post, name = "like_posts"),
     path('disliked/', main_views.dislike_undislike_post, name = "dislike_posts"),
-    path('editprofile/', main_views.editProfile, name = "editProfile")
+    path('editprofile/', main_views.editProfile, name = "editProfile"),
+    path('createpost/', main_views.create_posts, name="create_posts"),
 ]
