@@ -1,8 +1,13 @@
 {% extends 'base.html'%}
 {% block content %}
-<form action="" method="POST" enctype="multipart/form-data" class="post-form">
-    {% csrf_token %}
-    {{p_form}}
-    <button type='submit'>Send Post</button>
-</form>
+<br><br><br><br>
+<div class = "divcenter">
+    <form action="" method="POST" enctype="multipart/form-data" class="post-form">
+        <div id = "divform">
+            {% csrf_token %}
+            {{p_form}}
+            <button type='submit'>Send Post</button>
+        </div>
+    </form>
+</div>
 {% endblock content%}
