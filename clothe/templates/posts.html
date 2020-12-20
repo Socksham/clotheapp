@@ -13,14 +13,110 @@
     
         <p class = "captions">{{obj.content}}</p>
         <div class = "divlike">
-            <button class="like"><i class="fa fa-thumbs-up"></i></button>
-            <p class = "likenumber">{{obj.num_likes}}</p>
+                <button onclick="likePost({{obj.id}})" class="ui button like-btn{{obj.id}}"><i class="fa fa-thumbs-up"></i>
+                    {% if profile not in obj.liked.all %}
+                        Like
+                    {% else %}
+                        Unlike
+                    {% endif %}
+                </button>
+            <p class = "likenumber">{{obj.num_likes}} likes</p>
         </div>
         <div class = "divdislike">
-            <button class="dislike"><i class="fa fa-thumbs-down"></i></button>
-            <p class = "dislikenumber">{{obj.num_dislikes}}</p>
+                    <button onclick="dislikePost({{obj.id}})" class="ui button like-btn{{obj.id}}"><i class="fa fa-thumbs-down"></i>
+                        {% if profile not in obj.disliked.all %}
+                            Dislike
+                        {% else %}
+                            Undislike
+                        {% endif %}
+                    </button>
+            <p class = "dislikenumber">{{obj.num_dislikes}} dislikes</p>
         </div>
+        <span> {{ obj.num_comments }} comments</span>
+
+        <button class="cmt_btn ui button mb-5">show / hide comments</button>
+                <div class="comment-box">
+                {% if obj.comment_set.all %}
+                    {% for c in obj.comment_set.all %}
+                    
+                        <div class="ui segment mb-5">
+                            <img class="ui avatar image" src={{c.user.avatar.url}}>
+                            <span>{{ c.user }}</span>
+                            <div class='mt-5'>{{ c.body }}</div>
+                        </div>
+                    
+                    {% endfor %}
+                {% endif %}
+                </div>
+                form action="" method="POST"class='ui fluid form'>
+                    {% csrf_token %}
+                    <input type="hidden" name="post_id" value={{obj.id}}>
+                    {{ c_form }}
+                    <button type="submit" name="submit_c_form" class="ui primary button mt-5 w-full">Send</button>
+                </form>
     </div>
     {% endfor %}
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+crossorigin="anonymous"></script>
+<script type="text/javascript">
+    var user = '{{request.user}}'
+
+    function getToken(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    var csrftoken = getToken('csrftoken');
+</script>
+<script>
+    var likeUrl = '/liked/'
+    function likePost(idnum){
+        console.log(idnum)
+        $.ajax({
+            url: likeUrl,
+            cache: false,
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({'id':idnum}),
+            success: function (data) {
+                location.reload();
+            },
+            beforeSend: function (xhr, settings) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        });
+    }
+
+    var dislikeUrl = '/disliked/'
+    function dislikePost(idnum){
+        console.log(idnum)
+        $.ajax({
+            url: dislikeUrl,
+            cache: false,
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({'id':idnum}),
+            success: function (data) {
+                location.reload();
+            },
+            beforeSend: function (xhr, settings) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        });
+    }
+</script>
 {% endblock content%}
