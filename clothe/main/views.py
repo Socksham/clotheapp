@@ -1,4 +1,7 @@
 from main.utils import getAPICall
+from main.models import Post, Profile
+from .utils import getAPICall
+from .models import Post, Profile
 from .models import *
 from django.shortcuts import render, HttpResponse, redirect
 from .forms import signupForm

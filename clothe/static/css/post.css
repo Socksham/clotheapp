@@ -1,9 +1,11 @@
 .divcenter {
     margin: auto;
-    width: 30%;
+    width: 50%;
     border: 3px solid black;
     padding: 10px;
     background-color: white;
+    padding-top: 50px;
+    border-radius: 10px;
   }
   
   #clothelogo {
@@ -18,14 +20,14 @@
     display: table-cell;
     vertical-align: middle;
     align-self: center;
-    width: 350px;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     height: auto;
     border: 5px solid white;
     border-radius: 5px;
   }
-  
+ 
   .divuserdisplay {
     display:inline-block; margin-left: 0px;
   }

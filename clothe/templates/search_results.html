@@ -4,18 +4,18 @@
 {%for result in search_results.shopping_results%}
 <div class = "divcenter">
     <div class = "divuserdisplay">
-        <img class = "profpic" src=result.image>
-        <p class = "usernames">{{result.title}}</p>
+        <p class = "title" >{{result.title}}</p>
+        <p class = "merchant" href = {{result.link}}>{{result.merchant}}</p>
     </div>
     <img class = "imageposts" src = {{result.image}}>
-    <p class = "captions">{{result.snippet}}></p>
-    <div class = "divlike">
-        <button class="like"><i class="fa fa-thumbs-up"></i></button>
-        <p class = "likenumber">#######</p>
+    <p class = "captions">{{result.snippet}}</p>
+    <div class = "divrating">
+        <button class="rating"><i class="fa fa-star"></i></button>
+        <p class = "rating score">{{result.rating}} out of 5</p>
     </div>
-    <div class = "divdislike">
-        <button class="dislike"><i class="fa fa-thumbs-down"></i></button>
-        <p class = "dislikenumber">#######</p>
+    <div class = "divreviews">
+        <button class="reviews"><i class="fa fa-hashtag"></i></button>
+        <p class = "review numbers">{{result.reviews}} reviews</p>
     </div>
 </div>
 {%endfor%}
