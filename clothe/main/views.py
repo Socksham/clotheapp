@@ -74,7 +74,6 @@ def create_posts(request):
 
     return render(request, 'newpost.html', context)
 
-
 def post_comment_create_and_list_view(request):
     qs = Post.objects.all()
     profile = Profile.objects.get(user=request.user)
@@ -169,3 +168,11 @@ def dislike_undislike_post(request):
             post_obj.save()
             dislike.save()
     return redirect('posts')
+
+def invites_received_view(request):
+    profile = Profile.objects.get(user=request.user)
+    qs = Relationship.objects.invitations_received(profile)
+
+    context = {'qs':qs}
+
+    return render(request, 'myinvites.html', context)

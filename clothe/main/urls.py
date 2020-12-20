@@ -1,16 +1,16 @@
-from main.views import signup_view
 from django.urls import path, include
-import main.views as main_views
+from .views import *
 
 urlpatterns = [
-    path('', main_views.home, name="home"),
-    path('signup/', main_views.signup_view, name="signup_view"),
-    path('profile/', main_views.profile_view, name="profile_view"),
-    path('preferences/', main_views.preferences, name="preferences"),
-    path('recommendation/', main_views.userChoices, name="recommendation"),
-    path('posts/', main_views.post_comment_create_and_list_view, name="posts"),
-    path('liked/', main_views.like_unlike_post, name = "like_posts"),
-    path('disliked/', main_views.dislike_undislike_post, name = "dislike_posts"),
-    path('editprofile/', main_views.editProfile, name = "editProfile"),
-    path('createpost/', main_views.create_posts, name="create_posts"),
+    path('', home, name="home"),
+    path('signup/', signup_view, name="signup_view"),
+    path('profile/', profile_view, name="profile_view"),
+    path('preferences/', preferences, name="preferences"),
+    path('recommendation/', userChoices, name="recommendation"),
+    path('posts/', post_comment_create_and_list_view, name="posts"),
+    path('liked/', like_unlike_post, name = "like_posts"),
+    path('disliked/', dislike_undislike_post, name = "dislike_posts"),
+    path('editprofile/', editProfile, name = "editProfile"),
+    path('createpost/', create_posts, name="create_posts"),
+    path('my-invites/', invites_received_view, name='my-invites-view'),
 ]
