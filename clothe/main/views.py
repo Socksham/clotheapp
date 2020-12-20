@@ -37,7 +37,8 @@ def profile_view(request):
     }
 
     return render(request, 'profile.html', context)
-
+def editProfile(request):
+    return render(request, 'edit_profile.html')
 def preferences(request):
     return render(request, "preferences.html")
 

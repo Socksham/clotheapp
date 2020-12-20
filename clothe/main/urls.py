@@ -10,4 +10,5 @@ urlpatterns = [
     path('recommendation', main_views.userChoices, name="recommendation"),
     path('posts', main_views.post_comment_create_and_list_view, name="posts"),
     path('liked', main_views.like_unlike_post, name = "like_posts"),
+    path('editprofile', main_views.editProfile, name = "editProfile")
 ]
