@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/post.css' %}" media="screen"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/edit_profile.css' %}" media="screen"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     {% block head %}
     {% endblock head %}
@@ -16,7 +17,16 @@
     <ul>
         <h1 id = "clothelogo">Clothe</h1>
         <li><a href="/">Home</a></li>
+        {%if not user.is_authenticated%}
         <li><a href="/signup">Sign Up</a></li>
+<<<<<<< HEAD
+=======
+        <li><a href="/login">Log In</a></li>
+        {%endif%}
+        {%if user.is_authenticated%}
+        <li><a href="/logout">Log Out</a></li>
+        {%endif%}
+>>>>>>> 08265083e33ef953ac02389658a41ae4264030cc
         <li><a href="/preferences">Preferences</a></li>
         <li><a href="/editprofile">Profile</a></li>
         <li><a href="/posts">Posts</a></li>
