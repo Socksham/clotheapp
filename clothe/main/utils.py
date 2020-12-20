@@ -8,7 +8,7 @@ def get_random_code():
 #clothingtype: top, bottom, lower,/style: casual or formal 
 def getAPICall(location, gender, color, clothingtype, style, priceUpper, priceLower):
     # set up the request parameters
-    query = gender + " " + color + " " + clothingtype + " " + style
+    query = gender + " " + color + " " + clothingtype + " " + style + " $" + str(priceLower) + "...$"+ str(priceUpper)
     params = {
     'api_key': '4EA59F5AB8A1436290675DE6F9B92FD8',
     'location': location,
