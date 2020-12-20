@@ -1,134 +1,23 @@
 <!DOCTYPE html>
-{% load static %}
-<html>
-
+{%load static%}
+<html lang="en">
 <head>
-    <title>Hotbreads Chicago</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
-    {% block content %}
-    {% endblock content %}
-    <script type="text/javascript">
-        function getToken(name) {
-            var cookieValue = null;
-            if (document.cookie && document.cookie !== '') {
-                var cookies = document.cookie.split(';');
-                for (var i = 0; i < cookies.length; i++) {
-                    var cookie = cookies[i].trim();
-                    // Does this cookie string begin with the name we want?
-                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                        break;
-                    }
-                }
-            }
-            return cookieValue;
-        }
-        var csrftoken = getToken('csrftoken');
-
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
-        body {
-            margin: 0;
-            background: #222;
-            font-family: 'Work Sans', sans-serif;
-            font-weight: 800;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-        }
-
-        header::after {
-        content: '';
-        display: table;
-        clear: both;
-        }
-
-        .logo {
-        float: left;
-        padding: 10px 0;
-        }
-
-        nav {
-        float: right;
-        }
-
-        nav ul {
-        margin-top: 10px;
-        padding: 0;
-        list-style: none;
-        }
-
-        nav li {
-        display: inline-block;
-        margin-left: 40px;
-        padding-top: 10px;
-
-        position: relative;
-        }
-
-        nav a {
-        color: #444;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 14px;
-        }
-
-        nav a:hover {
-        color: #000;
-        text-decoration: none;
-        }
-
-        nav a::before {
-        content: '';
-        display: block;
-        height: 5px;
-        background-color: #444;
-
-        position: absolute;
-        top: 0;
-        width: 0%;
-        text-decoration: none;
-        transition: all ease-in-out 250ms;
-        }
-
-        nav a:hover::before {
-        width: 100%;
-        }
-    </style>
-    {% block head %}
-    {% endblock head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test CSS Template</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/post.css' %}" media="screen"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
-<body>
-    <style type="text/css">
-        body {
-            background: rgb(255, 254, 254) !important;
-        }
-
-        /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
-    </style>
-    <header>
-        <div class="container">
-        <h1 class="logo"></h1>
-
-    </header>
-    <script>
-        document.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-            // code for enter
-                stock = document.getElementById('stock').value;
-                stock = stock.toUpperCase();
-                window.location.pathname = '/' + stock
-            }
-        });
-    </script>
-    <!-- <script>
-        console.log("{stocks}")
-    </script> -->
-    {% block body %}
-    {% endblock body %}
+<body bgcolor = "white">
+    <ul>
+        <h1 id = "clothelogo">Clothe</h1>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li style="float:right"><a class="active" href="#about">About</a></li>
+    </ul>
+    
+    {%block content%}
+    {%endblock content%}
 </body>
+</html>

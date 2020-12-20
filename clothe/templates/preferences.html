@@ -1,23 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preferences</title>
-</head>
-<body>
-    <h1> Hello User!!!</h1>
-    <form action="recommendation" method = 'post'>
-    {%csrf_token%}
-    Where are you searching from? <input type="text" name = "location"><br>
-    Gender: <input type="text" name = "gender"><br>
-    Color: <input type="text" name = "color"><br>
-    Clothing type: <input type="text" name = "clothing_type"><br>
-    Style: <input type="text" name = "style"><br>
-    Price Upper: <input type="text" name = "upper"><br>
-    Price Lower: <input type="text" name = "lower"><br>
-    <input type="submit">
+{%extends "base.html"%}
+{%block content%}
+    <div class = "divcenter">
+        <h1> Hello User!!!</h1>
+        <form action="recommendation" method = 'post'>
+            {%csrf_token%}
+            <div class = "divpreference">
+                Where are you searching from? <input type = "text" name = "location"><br>
+            </div>
+            <div class = "divpreference">
+                Gender: 
+                <select id="man" name="gender" size="4" multiple>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="female">Rather not say</option>
+                </select>
+            </div>
+            <div class = "divpreference">
+                Color: 
+                <input id="colorPicker" type="color" value="#ff0000">
+                <select id="man" name="color" size="4" multiple>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="female">Rather not say</option>
+                </select>
+            </div>
+            <div class = "divpreference">
+                Clothing type: <input type = "text" name = "clothing_type"><br>
+            </div>
+            <div class = "divpreference">
+                Style: <input type = "text" name = "style"><br>
+            </div>
+            <div class = "divpreference">
+                Price Upper: <input type = "text" name = "upper"><br>
+            </div>
+            <div class = "divpreference">
+                Price Lower: <input type = "text" name = "lower"><br>
+            </div>
+            <div class = "divpreference">
+                <input type="submit">
+            </div>
+    </div>
 </form>
-
-</body>
-</html>
+{%endblock content%}
