@@ -35,10 +35,11 @@ def profile_view(request):
     context = {
         'profile':profile,
     }
-
     return render(request, 'profile.html', context)
+
 def editProfile(request):
     return render(request, 'edit_profile.html')
+
 def preferences(request):
     return render(request, "preferences.html")
 
