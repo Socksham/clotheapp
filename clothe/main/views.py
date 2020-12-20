@@ -1,7 +1,11 @@
 from main.utils import getAPICall
+<<<<<<< HEAD
 from main.models import Post, Profile
 from .utils import getAPICall
 from .models import Post, Profile
+=======
+from .models import *
+>>>>>>> 95c858889683da6af63b3f22c55cfc950b0d15d1
 from django.shortcuts import render, HttpResponse, redirect
 from .forms import signupForm
 from django.contrib.auth import authenticate, login

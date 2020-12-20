@@ -1,33 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test CSS Template</title>
-    <link rel="stylesheet" type="text/css" href="posts.css" media="screen"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+{% extends "base.html"%}
+{% block content %}
 <body bgcolor = "white">
-    <h1 id = "clothelogo">Clothe</h1>
+    {% for obj in qs %}
     <div class = "divcenter">
         <div class = "divuserdisplay">
-            <img class = "profpic" src="https://indianapublicmedia.org/stateimpact/files/2013/01/apple-image.jpg">
-            <p class = "usernames">user name</p>
+            <img class="profpic" src={{obj.author.avatar.url}}> 
+                {{ obj.author.user.username }} - {{ obj.created|timesince}} ago
         </div>
-        <img class = "imageposts" src = "https://img10.deviantart.net/a3f7/i/2014/080/d/1/ryuk_by_jesiachan-d7b15ej.png">
-        <p class = "captions">Hi I am a caption I present a caption please feel free to write a caption</p>
+        {% if obj.image %}
+        <img class = "imageposts" src = "{{obj.image.url}}">
+        {% endif %}
+    
+        <p class = "captions">{{obj.content}}</p>
         <div class = "divlike">
             <button class="like"><i class="fa fa-thumbs-up"></i></button>
-            <p class = "likenumber">#######</p>
+            <p class = "likenumber">{{obj.num_likes}}</p>
         </div>
         <div class = "divdislike">
             <button class="dislike"><i class="fa fa-thumbs-down"></i></button>
-            <p class = "dislikenumber">#######</p>
+            <p class = "dislikenumber">{{obj.num_dislikes}}</p>
         </div>
     </div>
-    {% for obj in qs %}
-    {{obj.num_dislikes}}
-    {{profile}}
     {% endfor %}
 </body>
-</html>
+{% endblock content%}
