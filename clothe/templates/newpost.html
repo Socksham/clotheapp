@@ -2,7 +2,7 @@
 {% block content %}
 <form action="" method="POST" enctype="multipart/form-data" class="post-form">
     {% csrf_token %}
-    {{p_form}}
+    {{p_form | crispy}}
     <button type='submit'>Send Post</button>
 </form>
-{% endblock content%}
+{% endblock content %}

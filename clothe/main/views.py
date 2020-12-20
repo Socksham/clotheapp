@@ -134,7 +134,8 @@ def like_unlike_post(request):
             post_obj.save()
             like.save()
     return redirect('posts')
-
+def login(request):
+    return render(request, "login.html")
 def dislike_undislike_post(request):
     user = request.user
     if request.method == 'POST':
@@ -169,10 +170,3 @@ def dislike_undislike_post(request):
             dislike.save()
     return redirect('posts')
 
-def invites_received_view(request):
-    profile = Profile.objects.get(user=request.user)
-    qs = Relationship.objects.invitations_received(profile)
-
-    context = {'qs':qs}
-
-    return render(request, 'myinvites.html', context)
