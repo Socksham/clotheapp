@@ -8,14 +8,18 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/post.css' %}" media="screen"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/edit_profile.css' %}" media="screen"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {% block head %}
+    {% endblock head %}
 </head>
 <body bgcolor = "white">
     <ul>
         <h1 id = "clothelogo">Clothe</h1>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li style="float:right"><a class="active" href="#about">About</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/signup">Sign Up</a></li>
+        <li><a href="/preferences">Preferences</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/posts">Posts</a></li>
     </ul>
     
     {%block content%}
