@@ -252,3 +252,22 @@ li a:hover {
   display: inline-block; margin-left: 4px;
   display: inline-block; vertical-align: middle;
 }
+
+#welcome {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 70px;
+  text-align: center;
+}
+
+#slogan {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 50px;
+  text-align: center;
+}
+
+
+
+
+
+
+

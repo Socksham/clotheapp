@@ -1,4 +1,3 @@
-from main.views import signup_view
 from django.urls import path, include
 import main.views as main_views
 from django.contrib.auth import views as auth_views

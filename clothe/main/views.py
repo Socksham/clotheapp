@@ -74,7 +74,6 @@ def create_posts(request):
 
     return render(request, 'newpost.html', context)
 
-
 def post_comment_create_and_list_view(request):
     qs = Post.objects.all()
     profile = Profile.objects.get(user=request.user)
@@ -170,3 +169,4 @@ def dislike_undislike_post(request):
             post_obj.save()
             dislike.save()
     return redirect('posts')
+
