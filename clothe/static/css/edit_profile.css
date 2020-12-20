@@ -1,0 +1,81 @@
+#clothelogo {
+    color: black;
+    text-align: center;
+    font-style: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 48px;
+  }
+
+  .profpic {
+    text-align: center;
+    width: 400px;
+    height: width;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .divcenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 3px solid black;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  .username {
+    display: inline-block; margin-left: 10px;
+  }
+
+  .email {
+    display: inline-block; margin-left: 10px;
+}
+
+.gender {
+    display: inline-block; margin-left: 10px;
+}
+
+.label {
+    display: inline-block; vertical-align: middle;
+    font-size: 20px;
+}
+
+#usernamefield {
+    display: inline-block; margin-left: 60px;
+    display: inline-block; vertical-align: middle;
+    width: 500px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+#emailfield {
+    display: inline-block; margin-left: 107px;
+    display: inline-block; vertical-align: middle;
+    width: 500px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+#genderfield {
+    display: inline-block; margin-left: 89px;
+    display: inline-block; vertical-align: middle;
+    width: 500px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+#editprof {
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    background-color: black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}

@@ -2,12 +2,14 @@
 {% block content %}
 <body bgcolor = "white">
     {% for obj in qs %}
+    <br><br><br><br>
     <div class = "divcenter">
         <div class = "divuserdisplay">
             <img class="profpic" src={{obj.author.avatar.url}}> 
                 {{ obj.author.user.username }} - {{ obj.created|timesince}} ago
         </div>
         {% if obj.image %}
+        <br><br>
         <img class = "imageposts" src = "{{obj.image.url}}">
         {% endif %}
     
